@@ -1,4 +1,4 @@
-```markdown
+
 # Quantum Error Correction: A Comprehensive Course Syllabus
 
 ## Course Overview
@@ -280,4 +280,3 @@ If you have a disability that may affect your ability to complete assigned work,
 **Office Hours:** \[Days and Times]
 
 This syllabus is subject to change at the discretion of the instructor. Students will be notified of any changes in a timely manner.
-```

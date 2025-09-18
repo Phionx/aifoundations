@@ -1,4 +1,4 @@
-```markdown
+
 # Guest Lecture: Quantum Error Correction - Business Implications and Opportunities
 
 ## Introduction (5 minutes)
@@ -112,4 +112,3 @@
 *   Contact information for further inquiries.
 
 This outline provides a comprehensive overview of Quantum Error Correction from a business perspective. The key is to engage the audience with real-world examples, interactive discussions, and practical exercises.
-```

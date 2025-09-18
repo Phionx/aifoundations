@@ -1,4 +1,4 @@
-```markdown
+
 # Quantum Error Correction: Comprehensive Curriculum Review and Improvement Plan
 
 ## I. Overall Curriculum Assessment and Strengths
@@ -147,4 +147,3 @@ The following improvements should be prioritized for immediate implementation:
 *   **Gather Feedback:** Continuously gather feedback from students and faculty members to assess the effectiveness of the implemented improvements and make further adjustments as needed.
 
 By implementing these recommendations, the Quantum Error Correction course can be transformed into a truly exceptional educational experience that prepares students for leadership roles in the quantum computing industry.
-```

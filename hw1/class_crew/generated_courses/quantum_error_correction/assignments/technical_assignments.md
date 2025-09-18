@@ -1,4 +1,4 @@
-```markdown
+
 # Quantum Error Correction Course - Technical Track Assignments
 
 ## Assignment 1: Qubit Representation and Quantum Gates
@@ -437,4 +437,3 @@ plot_histogram(counts)
 *   **Suggested Tools and Technologies:**
     *   Qiskit, Cirq.
     *   Application-specific libraries (e.g., financial modeling, molecular simulation).
-```

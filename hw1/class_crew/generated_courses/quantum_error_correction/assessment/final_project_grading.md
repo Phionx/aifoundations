@@ -1,4 +1,4 @@
-```markdown
+
 ## Final Project Grading Framework
 
 This framework outlines the grading criteria and evaluation process for the final project, designed to assess students' understanding and application of Quantum Error Correction (QEC) concepts in both business and technical domains. The project aims to integrate knowledge from both tracks, fostering interdisciplinary collaboration.
@@ -137,4 +137,3 @@ The final project grade is weighted as follows:
 All submissions must be electronic and submitted through the course website. Late submissions will be penalized.
 
 This grading framework provides a comprehensive and transparent approach to evaluating the final project, ensuring fairness and consistency across all teams. It encourages students to apply their knowledge, think critically, and collaborate effectively to address real-world challenges in the field of Quantum Error Correction.
-```

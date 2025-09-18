@@ -1,4 +1,4 @@
-```markdown
+
 # Quantum Error Correction Course: Business Student Simulation Report
 
 ## Overall Course Experience Evaluation
@@ -178,4 +178,3 @@ This course provides a valuable introduction to QEC and its business implication
 *   **Entrepreneur:** Starting a QEC-related business.
 
 Overall, this course has the potential to be a valuable experience for business students interested in quantum computing. By implementing the suggested improvements, the course can become even more relevant and accessible to a business audience.
-```

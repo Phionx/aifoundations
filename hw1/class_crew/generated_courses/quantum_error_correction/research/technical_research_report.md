@@ -1,4 +1,4 @@
-```markdown
+
 # Technical Research Report: Quantum Error Correction
 
 ## Introduction
@@ -62,4 +62,3 @@ Quantum Error Correction (QEC) is a set of techniques crucial for protecting qua
 *   **AI and Machine Learning for QEC:** The application of AI and machine learning can enhance QEC by improving decoding algorithms, optimizing control parameters, and predicting error patterns.
 *   **Achieving Fault Tolerance:** Ensuring that QEC implementations are fault-tolerant, meaning that errors in the error correction process do not propagate and cause further errors, is a major challenge.
 *   **Improving Coherence Time:** Increasing the coherence time of qubits is vital to allow more complex QEC operations.
-```

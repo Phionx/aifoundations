@@ -1,4 +1,4 @@
-```markdown
+
 ## Quantum Error Correction: Business Track - Weekly Assignments
 
 **Overall Grading Rubric for Business Track Assignments:**
@@ -367,4 +367,3 @@
         *   Feedback from the instructor and technical track students
 
 These weekly assignments provide a comprehensive and progressive learning experience for business students in the Quantum Error Correction course, ensuring they develop the knowledge and skills necessary to understand and apply QEC in real-world business situations.
-```

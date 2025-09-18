@@ -1,4 +1,4 @@
-```markdown
+
 # Business Case: Quantum Error Correction for Accelerated Drug Discovery
 
 ## 1. Executive Summary
@@ -108,4 +108,3 @@ A detailed ROI analysis will require specific data on drug development costs, ti
 ## 9. Conclusion
 
 Quantum Error Correction is essential for unlocking the full potential of quantum computing in drug discovery. By implementing QEC, we can overcome the limitations of noisy quantum hardware and accelerate the development of new and more effective drugs. This business case provides a roadmap for developing and implementing QEC to achieve these goals, highlighting the potential business value and ROI. Early adoption of QEC represents a strategic opportunity for pharmaceutical companies and quantum computing providers to gain a competitive advantage and improve patient outcomes.
-```

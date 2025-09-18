@@ -1,4 +1,4 @@
-```markdown
+
 # Guest Lecture: Quantum Error Correction - Technical Deep Dive
 
 ## Introduction (5 minutes)
@@ -215,4 +215,3 @@
 
 *   List of relevant research papers, articles, and websites.
 *   Contact information for further inquiries.
-```
