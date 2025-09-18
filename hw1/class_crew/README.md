@@ -90,3 +90,7 @@ This project successfully demonstrated the power of multi-agent collaboration in
 This crew was created by Shantanu R. Jha during the Fall 2025 iteration of the [AI Studio Course](https://aiforimpact.github.io/) at MIT, taught by Prof. Ramesh Raskar and team.
 
 
+---
+
+Name: Shantanu R. Jha
+Track: Technical
