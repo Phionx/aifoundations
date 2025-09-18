@@ -1,0 +1,277 @@
+business_research_task:
+  description: >
+    Conduct comprehensive research on the business applications and implications of {topic}.
+    Focus on how {topic} is used in real business environments, industry trends, 
+    market opportunities, and business value propositions. Research current case studies,
+    ROI examples, and business decision-making frameworks related to {topic}.
+  expected_output: >
+    A detailed business research report containing:
+    - Key business applications of {topic}
+    - Industry trends and market opportunities
+    - Real-world case studies and success stories
+    - Business value propositions and ROI examples
+    - Decision-making frameworks for business adoption
+    Formatted as markdown with clear sections and bullet points.
+  agent: business_ta
+  output_file: course_materials/research/business_research_report.md
+
+technical_research_task:
+  description: >
+    Conduct comprehensive research on the technical aspects and implementation of {topic}.
+    Focus on current technologies, tools, frameworks, best practices, and technical 
+    challenges. Research architecture patterns, performance considerations, security 
+    implications, and scalability requirements for {topic} implementations.
+  expected_output: >
+    A detailed technical research report containing:
+    - Core technical concepts and technologies
+    - Current tools, frameworks, and platforms
+    - Architecture patterns and best practices
+    - Performance, security, and scalability considerations
+    - Technical challenges and solutions
+    Formatted as markdown with clear sections and bullet points.
+  agent: technical_ta
+  output_file: course_materials/research/technical_research_report.md
+
+syllabus_creation_task:
+  description: >
+    Create a comprehensive course syllabus for {topic} that serves both business and 
+    technical students. Design a fall semester curriculum that balances theoretical 
+    foundations with practical applications. Include learning objectives, weekly topics,
+    prerequisites, assessment methods, and resource requirements. Ensure the syllabus
+    accommodates both tracks while maintaining academic rigor.
+  expected_output: >
+    A complete course syllabus containing:
+    - Course overview and learning objectives
+    - Weekly schedule with topics and subtopics
+    - Prerequisites and course requirements
+    - Assessment methods and grading criteria
+    - Required and recommended resources
+    - Track-specific learning paths
+    - Details on a final project that requires both business and technical components
+    Formatted as markdown with clear structure and sections.
+  agent: professor
+  context:
+    - business_research_task
+    - technical_research_task
+  output_file: course_materials/curriculum/course_syllabus.md
+
+business_guest_lecture_task:
+  description: >
+    Create comprehensive guest lecture materials for the business side of {topic} based
+    on real industry experience. Develop engaging content that includes real case studies,
+    industry insights, practical examples, and career guidance. Focus on how {topic}
+    drives business value and decision-making in real organizations.
+  expected_output: >
+    Complete guest lecture materials containing:
+    - Lecture outline and learning objectives
+    - Real industry case studies and examples
+    - Business insights and best practices
+    - Interactive discussion questions
+    - Career guidance and industry expectations
+    - Practical exercises and activities
+    Formatted as markdown with clear sections and engaging content.
+  agent: business_industry_expert
+  output_file: course_materials/lectures/business_guest_lecture.md
+
+technical_guest_lecture_task:
+  description: >
+    Create comprehensive guest lecture materials for the technical side of {topic} based
+    on real industry experience. Develop hands-on content that includes technical 
+    demonstrations, code examples, architecture discussions, and implementation 
+    best practices. Focus on real-world technical challenges and solutions.
+  expected_output: >
+    Complete guest lecture materials containing:
+    - Technical lecture outline and objectives
+    - Live coding demonstrations and examples
+    - Architecture and design patterns
+    - Technical challenges and solutions
+    - Hands-on exercises and projects
+    - Industry best practices and standards
+    Formatted as markdown with code examples and technical diagrams.
+  agent: technical_industry_expert
+  output_file: course_materials/lectures/technical_guest_lecture.md
+
+business_assignments_task:
+  description: >
+    Create weekly assignments for the business track of the {topic} course. Design
+    progressive assignments that build from basic concepts to advanced applications.
+    Include case studies, analysis exercises, business plan components, and 
+    decision-making scenarios. Ensure assignments are practical and relevant to
+    real business situations.
+  expected_output: >
+    Weekly business assignments containing:
+    - 12-15 weekly assignment descriptions
+    - Learning objectives for each assignment
+    - Detailed instructions and requirements
+    - Grading rubrics and evaluation criteria
+    - Suggested resources and references
+    - Examples of expected deliverables
+    Formatted as markdown with clear structure for each week.
+  agent: business_ta
+  context:
+    - syllabus_creation_task
+    - business_research_task
+  output_file: course_materials/assignments/business_assignments.md
+
+technical_assignments_task:
+  description: >
+    Create weekly assignments for the technical track of the {topic} course. Design
+    progressive hands-on assignments that build technical skills from fundamentals
+    to advanced implementation. Include coding projects, system design exercises,
+    debugging challenges, and performance optimization tasks.
+  expected_output: >
+    Weekly technical assignments containing:
+    - 12-15 weekly assignment descriptions
+    - Technical learning objectives for each assignment
+    - Detailed implementation requirements
+    - Code examples and starter templates
+    - Testing and evaluation criteria
+    - Suggested tools and technologies
+    Formatted as markdown with code blocks and technical specifications.
+  agent: technical_ta
+  context:
+    - syllabus_creation_task
+    - technical_research_task
+  output_file: course_materials/assignments/technical_assignments.md
+
+business_student_simulation_task:
+  description: >
+    Simulate the experience of a business student taking the {topic} course. Go through
+    the syllabus, assignments, and materials from a business student perspective.
+    Identify areas that are too technical, unclear, or not relevant to business needs.
+    Provide feedback on learning progression, assignment difficulty, and practical
+    applicability for business careers.
+  expected_output: >
+    Business student simulation report containing:
+    - Weekly learning experience summaries
+    - Assignment difficulty and relevance assessment
+    - Areas of confusion or technical overload
+    - Suggestions for business-focused improvements
+    - Career relevance and practical application feedback
+    - Overall course experience evaluation
+    Formatted as markdown with clear weekly breakdowns.
+  agent: business_student
+  context:
+    - syllabus_creation_task
+    - business_assignments_task
+    - business_guest_lecture_task
+    - technical_guest_lecture_task
+  output_file: course_materials/feedback/business_student_simulation.md
+
+technical_student_simulation_task:
+  description: >
+    Simulate the experience of a technical student taking the {topic} course. Go through
+    the syllabus, assignments, and materials from a technical student perspective.
+    Identify areas that lack technical depth, hands-on experience, or practical
+    implementation details. Provide feedback on technical progression, assignment
+    complexity, and industry relevance.
+  expected_output: >
+    Technical student simulation report containing:
+    - Weekly technical learning experience summaries
+    - Assignment technical depth and complexity assessment
+    - Areas lacking hands-on or practical experience
+    - Suggestions for technical improvements
+    - Industry relevance and skill development feedback
+    - Overall technical course experience evaluation
+    Formatted as markdown with clear weekly technical breakdowns.
+  agent: technical_student
+  context:
+    - syllabus_creation_task
+    - technical_assignments_task
+    - technical_guest_lecture_task
+    - business_guest_lecture_task
+  output_file: course_materials/feedback/technical_student_simulation.md
+
+business_use_case_task:
+  description: >
+    Identify and develop a compelling business use case for the final project in the
+    {topic} course. Research real business problems that can be solved using {topic}
+    concepts. Create a detailed business case that includes problem statement, 
+    business impact, stakeholders, success metrics, and implementation considerations.
+  expected_output: >
+    Comprehensive business use case containing:
+    - Detailed problem statement and business context
+    - Stakeholder analysis and business impact assessment
+    - Success metrics and KPIs
+    - Implementation timeline and resource requirements
+    - Risk assessment and mitigation strategies
+    - Expected business value and ROI projections
+    Formatted as markdown with clear business case structure.
+  agent: business_student
+  context:
+    - business_student_simulation_task
+  output_file: course_materials/projects/business_use_case.md
+
+technical_solution_task:
+  description: >
+    Design a technical solution for the business use case identified in the previous
+    task. Create a comprehensive technical implementation plan that includes system
+    architecture, technology stack, development approach, testing strategy, and
+    deployment considerations. Ensure the solution is technically feasible and scalable.
+  expected_output: >
+    Detailed technical solution containing:
+    - System architecture and technical design
+    - Technology stack and tool selection
+    - Development methodology and timeline
+    - Testing strategy and quality assurance
+    - Deployment and scaling considerations
+    - Technical risk assessment and mitigation
+    Formatted as markdown with technical diagrams and specifications.
+  agent: technical_student
+  context:
+    - technical_student_simulation_task
+    - business_use_case_task
+  output_file: course_materials/projects/technical_solution.md
+
+final_project_grading_task:
+  description: >
+    Develop comprehensive grading criteria and evaluation framework for the final
+    project that combines the business use case and technical solution. Create
+    detailed rubrics for both business and technical components, including
+    assessment criteria, scoring guidelines, and feedback templates.
+  expected_output: >
+    Complete grading framework containing:
+    - Detailed grading rubrics for business and technical components
+    - Assessment criteria and scoring guidelines
+    - Feedback templates and evaluation forms
+    - Grade distribution and weighting
+    - Examples of excellent, satisfactory, and needs improvement work
+    - Grading timeline and submission requirements
+    Formatted as markdown with clear evaluation criteria.
+  agent: professor
+  context:
+    - syllabus_creation_task
+    - business_use_case_task
+    - technical_solution_task
+  output_file: course_materials/assessment/final_project_grading.md
+
+course_review_task:
+  description: >
+    Conduct a comprehensive review of all course materials, assignments, and
+    learning experiences created by the crew. Evaluate the overall curriculum
+    design, identify strengths and weaknesses, assess alignment between tracks,
+    and provide specific recommendations for improvement. Focus on educational
+    effectiveness, industry relevance, and student experience.
+  expected_output: >
+    Comprehensive course review containing:
+    - Overall curriculum assessment and strengths
+    - Identified weaknesses and improvement areas
+    - Track alignment and integration analysis
+    - Educational effectiveness evaluation
+    - Industry relevance and practical applicability assessment
+    - Specific recommendations for enhancement
+    - Priority improvements and implementation suggestions
+    Formatted as markdown with clear analysis and actionable recommendations.
+  agent: critic
+  context:
+    - syllabus_creation_task
+    - business_assignments_task
+    - technical_assignments_task
+    - business_guest_lecture_task
+    - technical_guest_lecture_task
+    - business_student_simulation_task
+    - technical_student_simulation_task
+    - business_use_case_task
+    - technical_solution_task
+    - final_project_grading_task
+  output_file: course_materials/review/course_review_report.md
