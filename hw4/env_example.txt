@@ -1,0 +1,15 @@
+# Google Gemini API Key
+GEMINI_API_KEY=AIzaSyCWiaEnpec7QyU-ZCuvNt_2aTQvru2Br-c
+
+# Optional: Configure default accent for TTS
+# Available accents: en, es, fr, de, it, etc.
+DEFAULT_TTS_LANGUAGE=en
+
+# Optional: Configure Whisper model size
+# Options: tiny, base, small, medium, large
+WHISPER_MODEL=base
+
+# Optional: Configure Gemini model (Free tier compatible)
+# Available models: models/gemini-flash-latest, models/gemini-pro-latest, models/gemini-2.0-flash
+# Recommended: models/gemini-flash-latest (fast and free tier compatible)
+GEMINI_MODEL=models/gemini-flash-latest
