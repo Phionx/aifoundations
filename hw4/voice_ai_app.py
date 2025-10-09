@@ -218,11 +218,19 @@ class VoiceAI:
         try:
             # Check if using LangChain or direct Google AI
             if hasattr(self.llm, 'invoke'):
-                # LangChain interface
-                messages = [
-                    SystemMessage(content=self.system_prompt),
-                    HumanMessage(content=user_message)
-                ]
+                # LangChain interface - Include conversation history
+                chat_history = self.memory.chat_memory.messages
+                
+                # Build messages with conversation history
+                messages = [SystemMessage(content=self.system_prompt)]
+                
+                # Add conversation history
+                for msg in chat_history:
+                    messages.append(msg)
+                
+                # Add current user message
+                messages.append(HumanMessage(content=user_message))
+                
                 response = self.llm.invoke(messages)
                 ai_response = response.content.strip()
                 
@@ -232,12 +240,23 @@ class VoiceAI:
                     {"output": ai_response}
                 )
             else:
-                # Direct Google AI interface
-                prompt = f"{self.system_prompt}\n\nUser: {user_message}"
-                response = self.llm.generate_content(prompt)
+                # Direct Google AI interface - Include conversation history
+                chat_history = self.memory.chat_memory.messages
+                
+                # Build context with history
+                context = self.system_prompt + "\n\n"
+                for i, msg in enumerate(chat_history):
+                    if i % 2 == 0:  # User message
+                        context += f"User: {msg.content}\n"
+                    else:  # AI response
+                        context += f"Assistant: {msg.content}\n"
+                
+                context += f"User: {user_message}\nAssistant:"
+                
+                response = self.llm.generate_content(context)
                 ai_response = response.text.strip()
                 
-                # Update memory (simplified for direct API)
+                # Update memory
                 self.memory.save_context(
                     {"input": user_message},
                     {"output": ai_response}
